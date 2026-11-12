@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PulseFlow — SaaS Revenue & Cohort Intelligence Platform</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="workspace-switcher">
+      <div class="ws-avatar">P</div>
+      <div class="ws-info">
+        <div class="ws-name">PulseFlow HQ</div>
+        <div class="ws-plan">Scale Plan · Production</div>
+      </div>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+
+    <div class="nav-section-title">Core Intelligence</div>
+    <ul class="nav-list">
+      <li>
+        <a href="#" class="nav-link active">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-6 6"/></svg>
+          Revenue & MRR
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Customer Cohorts
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Churn & Retention
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          Billing & Invoicing
+        </a>
+      </li>
+    </ul>
+
+    <div class="nav-section-title">Integrations & Pipelines</div>
+    <ul class="nav-list">
+      <li>
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Stripe Webhooks
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          Postgres Telemetry
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-bottom">
+      <div class="user-avatar">HJ</div>
+      <div style="flex:1;">
+        <div style="font-size:12px; font-weight:600;">Hashim</div>
+        <div style="font-size:11px; color:var(--text-muted);">Creator · @hashim_py</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Viewport -->
+  <main class="main-viewport">
+    <header class="topbar">
+      <div class="search-box">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="searchInput" placeholder="Search customers, invoices, cohorts...">
+        <span class="kbd-badge">⌘K</span>
+      </div>
+
+      <div class="topbar-actions">
+        <a href="https://hashim.me.uk" class="btn btn-secondary">Portfolio</a>
+        <a href="https://github.com/hashim-work-svg/pulseflow-analytics" class="btn btn-secondary" id="gitLink">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub Repo
+        </a>
+        <button class="btn btn-primary" onclick="alert('Exporting verified CSV cohort log...')">Export CSV</button>
+      </div>
+    </header>
+
+    <div class="dashboard-content">
+      <div class="page-header">
+        <div class="page-title">
+          <h1>Revenue & Cohort Analytics</h1>
+          <p>Real-time telemetry aggregated across Stripe billing, webhooks, and subscription lifecycles.</p>
+        </div>
+
+        <div class="timeframe-group">
+          <button class="time-btn" onclick="setTimeframe('7D')">7D</button>
+          <button class="time-btn active" onclick="setTimeframe('30D')">30D</button>
+          <button class="time-btn" onclick="setTimeframe('90D')">90D</button>
+          <button class="time-btn" onclick="setTimeframe('12M')">12M</button>
+        </div>
+      </div>
+
+      <!-- KPI Metrics -->
+      <section class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-header">
+            <span>Net Monthly Recurring Revenue</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          </div>
+          <div class="metric-value" id="kpiMrr">$118,450</div>
+          <div class="metric-footer">
+            <span class="trend-badge trend-up">↑ +14.2%</span>
+            <span class="trend-subtext">vs. previous period</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span>Net Revenue Retention (NRR)</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          </div>
+          <div class="metric-value">124.8%</div>
+          <div class="metric-footer">
+            <span class="trend-badge trend-up">↑ +3.1%</span>
+            <span class="trend-subtext">best-in-class SaaS cohort</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span>LTV / CAC Efficiency</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          </div>
+          <div class="metric-value">5.2x</div>
+          <div class="metric-footer">
+            <span class="trend-badge trend-up">↑ +0.6x</span>
+            <span class="trend-subtext">Payback: 4.8 months</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span>Net Logo Churn</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          </div>
+          <div class="metric-value">0.72%</div>
+          <div class="metric-footer">
+            <span class="trend-badge trend-up">↓ -0.18%</span>
+            <span class="trend-subtext">negative revenue churn</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Charts Area -->
+      <section class="charts-grid">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Recurring Revenue & Expansion Velocity</div>
+              <div class="card-subtitle">Comparing new additions, expansions, and contraction across 30 days</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:14px; font-size:12px;">
+              <span style="display:flex; align-items:center; gap:6px;"><span style="width:8px; height:8px; border-radius:50%; background:#6366f1;"></span> Net MRR</span>
+              <span style="display:flex; align-items:center; gap:6px;"><span style="width:8px; height:8px; border-radius:50%; background:#38bdf8;"></span> Expansion</span>
+            </div>
+          </div>
+          <div class="chart-wrapper">
+            <svg width="100%" height="100%" viewBox="0 0 700 240" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="indigoFade" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25"/>
+                  <stop offset="100%" stop-color="#6366f1" stop-opacity="0.0"/>
+                </linearGradient>
+              </defs>
+              <line x1="40" y1="30" x2="700" y2="30" stroke="rgba(255,255,255,0.04)"/>
+              <line x1="40" y1="80" x2="700" y2="80" stroke="rgba(255,255,255,0.04)"/>
+              <line x1="40" y1="130" x2="700" y2="130" stroke="rgba(255,255,255,0.04)"/>
+              <line x1="40" y1="180" x2="700" y2="180" stroke="rgba(255,255,255,0.04)"/>
+              <line x1="40" y1="220" x2="700" y2="220" stroke="rgba(255,255,255,0.08)"/>
+
+              <text x="5" y="34" fill="#64748b" font-size="10" font-family="monospace">$120k</text>
+              <text x="5" y="84" fill="#64748b" font-size="10" font-family="monospace">$100k</text>
+              <text x="5" y="134" fill="#64748b" font-size="10" font-family="monospace">$80k</text>
+              <text x="5" y="184" fill="#64748b" font-size="10" font-family="monospace">$60k</text>
+
+              <path d="M40,160 Q150,140 260,110 T480,95 T700,60" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="3"/>
+              <path d="M40,140 Q130,120 220,135 T400,80 T560,65 T700,38 L700,220 L40,220 Z" fill="url(#indigoFade)"/>
+              <path d="M40,140 Q130,120 220,135 T400,80 T560,65 T700,38" fill="none" stroke="#6366f1" stroke-width="2.5"/>
+              <circle cx="560" cy="65" r="5" fill="#6366f1" stroke="#fff" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Plan Distribution & Retention</div>
+              <div class="card-subtitle">Active accounts by billing tier</div>
+            </div>
+          </div>
+
+          <div class="retention-bar-item">
+            <div class="retention-labels">
+              <span>Enterprise ($1,200+/mo)</span>
+              <span style="font-weight:600; color:var(--text-primary);">$64,800 · 54%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 54%;"></div></div>
+          </div>
+
+          <div class="retention-bar-item">
+            <div class="retention-labels">
+              <span>Scale & Growth ($480/mo)</span>
+              <span style="font-weight:600; color:var(--text-primary);">$38,400 · 32%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 32%; background: #38bdf8;"></div></div>
+          </div>
+
+          <div class="retention-bar-item">
+            <div class="retention-labels">
+              <span>Pro Self-Serve ($120/mo)</span>
+              <span style="font-weight:600; color:var(--text-primary);">$15,250 · 14%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 14%; background: #10b981;"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Customer Activity Table -->
+      <section class="table-card">
+        <div class="table-header-bar">
+          <div class="table-tabs">
+            <button class="table-tab-btn active" onclick="filterTable('all')">All Transactions</button>
+            <button class="table-tab-btn" onclick="filterTable('expansion')">Expansion</button>
+            <button class="table-tab-btn" onclick="filterTable('enterprise')">Enterprise Tier</button>
+          </div>
+          <span style="font-size: 12px; color: var(--text-muted);">Showing 5 of 1,280 settled events</span>
+        </div>
+
+        <table class="data-table" id="customerTable">
+          <thead>
+            <tr>
+              <th>Customer</th>
+              <th>Tier</th>
+              <th>Payment Method</th>
+              <th>Status</th>
+              <th>MRR Contribution</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-tier="enterprise">
+              <td>
+                <div class="customer-cell">
+                  <div class="avatar-initial" style="background:#312e81; color:#c7d2fe;">SJ</div>
+                  <div>
+                    <div class="customer-name">Sarah Jenkins</div>
+                    <div class="customer-email">sarah@linear-health.io</div>
+                  </div>
+                </div>
+              </td>
+              <td><span style="font-weight:500; color:var(--text-primary);">Enterprise Custom</span></td>
+              <td>Visa •••• 8812</td>
+              <td><span class="status-pill status-settled">Settled</span></td>
+              <td class="amount-cell">$1,450.00 / mo</td>
+            </tr>
+
+            <tr data-tier="growth">
+              <td>
+                <div class="customer-cell">
+                  <div class="avatar-initial" style="background:#064e3b; color:#a7f3d0;">MV</div>
+                  <div>
+                    <div class="customer-name">Marcus Vance</div>
+                    <div class="customer-email">m.vance@solvify.au</div>
+                  </div>
+                </div>
+              </td>
+              <td><span style="font-weight:500; color:var(--text-primary);">Growth Plan</span></td>
+              <td>Mastercard •••• 3410</td>
+              <td><span class="status-pill status-settled">Settled</span></td>
+              <td class="amount-cell">$480.00 / mo</td>
+            </tr>
+
+            <tr data-tier="enterprise">
+              <td>
+                <div class="customer-cell">
+                  <div class="avatar-initial" style="background:#581c87; color:#e9d5ff;">ER</div>
+                  <div>
+                    <div class="customer-name">Elena Rostova</div>
+                    <div class="customer-email">elena@hyperion-ai.org</div>
+                  </div>
+                </div>
+              </td>
+              <td><span style="font-weight:500; color:var(--text-primary);">AI Cluster Scale</span></td>
+              <td>Wire Transfer</td>
+              <td><span class="status-pill status-pending">Processing</span></td>
+              <td class="amount-cell">$2,400.00 / mo</td>
+            </tr>
+
+            <tr data-tier="pro">
+              <td>
+                <div class="customer-cell">
+                  <div class="avatar-initial" style="background:#1e293b; color:#94a3b8;">DC</div>
+                  <div>
+                    <div class="customer-name">David Chen</div>
+                    <div class="customer-email">david@craftbase.dev</div>
+                  </div>
+                </div>
+              </td>
+              <td><span style="font-weight:500; color:var(--text-primary);">Pro Tier</span></td>
+              <td>Visa •••• 1042</td>
+              <td><span class="status-pill status-settled">Settled</span></td>
+              <td class="amount-cell">$120.00 / mo</td>
+            </tr>
+
+            <tr data-tier="growth">
+              <td>
+                <div class="customer-cell">
+                  <div class="avatar-initial" style="background:#1e1b4b; color:#c7d2fe;">AO</div>
+                  <div>
+                    <div class="customer-name">Amara Okafor</div>
+                    <div class="customer-email">amara@finscale.ng</div>
+                  </div>
+                </div>
+              </td>
+              <td><span style="font-weight:500; color:var(--text-primary);">Scale Plan</span></td>
+              <td>Stripe Invoicing</td>
+              <td><span class="status-pill status-settled">Settled</span></td>
+              <td class="amount-cell">$850.00 / mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
